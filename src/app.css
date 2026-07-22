@@ -1,0 +1,546 @@
+@import "tailwindcss";
+
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   CUSTOM FONTS — ClashDisplay & Nippo (identidad visual de PulsoBI)
+   ═══════════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nippo';
+  src: url('/fonts/Nippo_Complete/Fonts/WEB/fonts/Nippo-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   TAILWIND THEME BRIDGE
+   Expone los tokens de proyecto como utilidades Tailwind.
+   Los valores apuntan a las variables CSS (definidas abajo).
+   ═══════════════════════════════════════════════════════════════════ */
+@theme {
+  --font-clash: 'ClashDisplay', sans-serif;
+  --font-nippo: 'Nippo', sans-serif;
+
+  --color-primary: var(--md-sys-color-primary);
+  --color-primary-hover: color-mix(in srgb, var(--md-sys-color-primary) 85%, white);
+  --color-primary-light: var(--md-sys-color-primary-container);
+  --color-secondary: var(--md-sys-color-secondary);
+  --color-secondary-hover: color-mix(in srgb, var(--md-sys-color-secondary) 85%, white);
+  --color-secondary-light: var(--md-sys-color-secondary-container);
+  --color-tertiary: var(--md-sys-color-tertiary);
+  --color-tertiary-light: var(--md-sys-color-tertiary-container);
+  --color-background: var(--md-sys-color-surface);
+  --color-background-secondary: var(--md-sys-color-surface-container-low);
+  --color-background-tertiary: var(--md-sys-color-surface-container);
+  --color-surface: var(--md-sys-color-surface-container-lowest);
+  --color-surface-hover: var(--md-sys-color-surface-container-low);
+  --color-surface-border: var(--md-sys-color-outline-variant);
+  --color-content: var(--md-sys-color-on-surface);
+  --color-content-secondary: var(--md-sys-color-on-surface-variant);
+  --color-content-muted: var(--md-sys-color-outline);
+  --color-content-inverse: var(--md-sys-color-on-primary);
+  --color-accent: var(--md-sys-color-tertiary);
+  --color-accent-hover: var(--md-sys-color-on-tertiary-container);
+  --color-accent-light: var(--md-sys-color-tertiary-container);
+  --color-success: #386A20;
+  --color-warning: #7A5800;
+  --color-error: var(--md-sys-color-error);
+  --color-violet: var(--md-sys-color-tertiary);
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ═══════════════════════════════════════════════════════════════════
+   MATERIAL DESIGN 3 — LIGHT SCHEME
+   Generado desde seed #1A365D (Deep Navy Blue)
+   Nomenclatura: --md-sys-color-{role}
+   ═══════════════════════════════════════════════════════════════════ */
+:root {
+
+  /* ── M3 Primary (tonal palette de azul marino) ─────────────────── */
+  --md-sys-color-primary: #1A4A7A;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #D4E4FF;
+  --md-sys-color-on-primary-container: #001C39;
+
+  /* ── M3 Secondary (azul más desaturado) ────────────────────────── */
+  --md-sys-color-secondary: #4A6785;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #CCE5FF;
+  --md-sys-color-on-secondary-container: #002135;
+
+  /* ── M3 Tertiary (complementario violeta-azul) ─────────────────── */
+  --md-sys-color-tertiary: #5B5791;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #E4DFFF;
+  --md-sys-color-on-tertiary-container: #18144E;
+
+  /* ── M3 Error ──────────────────────────────────────────────────── */
+  --md-sys-color-error: #BA1A1A;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD6;
+  --md-sys-color-on-error-container: #410002;
+
+  /* ── M3 Surface (escala de superficies tonales) ─────────────────── */
+  --md-sys-color-surface: #F8FAFD;
+  --md-sys-color-on-surface: #191C20;
+  --md-sys-color-surface-variant: #DDE3F0;
+  --md-sys-color-on-surface-variant: #41484F;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F2F4FA;
+  --md-sys-color-surface-container: #ECEEF4;
+  --md-sys-color-surface-container-high: #E6E8EF;
+  --md-sys-color-surface-container-highest: #E0E3E9;
+
+  /* ── M3 Outline ─────────────────────────────────────────────────── */
+  --md-sys-color-outline: #717A86;
+  --md-sys-color-outline-variant: #C1C8D5;
+
+  /* ── M3 Inverse ─────────────────────────────────────────────────── */
+  --md-sys-color-inverse-surface: #2E3036;
+  --md-sys-color-inverse-on-surface: #EFF0F6;
+  --md-sys-color-inverse-primary: #A3C8FF;
+
+  /* ── M3 Scrim & Shadow ──────────────────────────────────────────── */
+  --md-sys-color-scrim: #000000;
+
+  /* ═══════════════════════════════════════════════════════════════
+     M3 SHAPE TOKENS
+     ═══════════════════════════════════════════════════════════════ */
+  --md-sys-shape-corner-none: 0px;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-large-increased: 20px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-extra-large-increased: 32px;
+  --md-sys-shape-corner-extra-extra-large: 48px;
+  --md-sys-shape-corner-full: 9999px;
+
+  /* ═══════════════════════════════════════════════════════════════
+     M3 TYPESCALE — con ClashDisplay y Nippo como fuentes de marca
+     Formato: font-weight font-size/line-height font-family
+     ═══════════════════════════════════════════════════════════════ */
+
+  /* Display — Nippo para impacto hero */
+  --md-sys-typescale-display-large: 400 3.5625rem/4rem 'Nippo', sans-serif;
+  --md-sys-typescale-display-medium: 400 2.8125rem/3.25rem 'Nippo', sans-serif;
+  --md-sys-typescale-display-small: 400 2.25rem/2.75rem 'Nippo', sans-serif;
+
+  /* Headline — ClashDisplay para secciones */
+  --md-sys-typescale-headline-large: 400 2rem/2.5rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-headline-medium: 400 1.75rem/2.25rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-headline-small: 400 1.5rem/2rem 'ClashDisplay', sans-serif;
+
+  /* Title */
+  --md-sys-typescale-title-large: 400 1.375rem/1.75rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-title-medium: 500 1rem/1.5rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-title-small: 500 0.875rem/1.25rem 'ClashDisplay', sans-serif;
+
+  /* Body */
+  --md-sys-typescale-body-large: 400 1rem/1.5rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-body-medium: 400 0.875rem/1.25rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-body-small: 400 0.75rem/1rem 'ClashDisplay', sans-serif;
+
+  /* Label */
+  --md-sys-typescale-label-large: 500 0.875rem/1.25rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-label-medium: 500 0.75rem/1rem 'ClashDisplay', sans-serif;
+  --md-sys-typescale-label-small: 500 0.6875rem/1rem 'ClashDisplay', sans-serif;
+
+  /* ═══════════════════════════════════════════════════════════════
+     M3 MOTION TOKENS
+     ═══════════════════════════════════════════════════════════════ */
+  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-standard-decelerate: cubic-bezier(0, 0, 0, 1);
+  --md-sys-motion-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
+  --md-sys-motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --md-sys-motion-duration-short1: 50ms;
+  --md-sys-motion-duration-short2: 100ms;
+  --md-sys-motion-duration-short3: 150ms;
+  --md-sys-motion-duration-short4: 200ms;
+  --md-sys-motion-duration-medium1: 250ms;
+  --md-sys-motion-duration-medium2: 300ms;
+  --md-sys-motion-duration-medium3: 350ms;
+  --md-sys-motion-duration-medium4: 400ms;
+  --md-sys-motion-duration-long1: 450ms;
+  --md-sys-motion-duration-long2: 500ms;
+
+  /* ═══════════════════════════════════════════════════════════════
+     BRIDGE: Tailwind legacy tokens → M3 semantic roles
+     Permite que las clases existentes (bg-background, text-content…)
+     sigan funcionando pero ahora usan colores M3.
+     ═══════════════════════════════════════════════════════════════ */
+  --color-primary: var(--md-sys-color-primary);
+  --color-primary-hover: color-mix(in srgb, var(--md-sys-color-primary) 85%, white);
+  --color-primary-light: var(--md-sys-color-primary-container);
+
+  --color-secondary: var(--md-sys-color-secondary);
+  --color-secondary-hover: color-mix(in srgb, var(--md-sys-color-secondary) 85%, white);
+  --color-secondary-light: var(--md-sys-color-secondary-container);
+
+  --color-tertiary: var(--md-sys-color-tertiary);
+  --color-tertiary-light: var(--md-sys-color-tertiary-container);
+
+  --background: var(--md-sys-color-surface);
+  --background-secondary: var(--md-sys-color-surface-container-low);
+  --background-tertiary: var(--md-sys-color-surface-container);
+
+  --surface: var(--md-sys-color-surface-container-lowest);
+  --surface-hover: var(--md-sys-color-surface-container-low);
+  --surface-border: var(--md-sys-color-outline-variant);
+
+  --text-primary: var(--md-sys-color-on-surface);
+  --text-secondary: var(--md-sys-color-on-surface-variant);
+  --text-muted: var(--md-sys-color-outline);
+  --text-inverse: var(--md-sys-color-on-primary);
+
+  --color-accent: var(--md-sys-color-tertiary);
+  --color-accent-hover: var(--md-sys-color-on-tertiary-container);
+  --color-accent-light: var(--md-sys-color-tertiary-container);
+
+  --color-success: #386A20;
+  --color-warning: #7A5800;
+  --color-error: var(--md-sys-color-error);
+  --color-violet: var(--md-sys-color-tertiary);
+
+  /* Font alias */
+  --font-clash: 'ClashDisplay', sans-serif;
+  --font-nippo: 'Nippo', sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MATERIAL DESIGN 3 — DARK SCHEME
+   ═══════════════════════════════════════════════════════════════════ */
+[data-theme="dark"] {
+
+  /* ── M3 Primary dark ────────────────────────────────────────────── */
+  --md-sys-color-primary: #A3C8FF;
+  --md-sys-color-on-primary: #00315C;
+  --md-sys-color-primary-container: #004884;
+  --md-sys-color-on-primary-container: #D4E4FF;
+
+  /* ── M3 Secondary dark ──────────────────────────────────────────── */
+  --md-sys-color-secondary: #A4C8E8;
+  --md-sys-color-on-secondary: #08354F;
+  --md-sys-color-secondary-container: #214D67;
+  --md-sys-color-on-secondary-container: #CCE5FF;
+
+  /* ── M3 Tertiary dark ───────────────────────────────────────────── */
+  --md-sys-color-tertiary: #C5C0EA;
+  --md-sys-color-on-tertiary: #302B60;
+  --md-sys-color-tertiary-container: #474278;
+  --md-sys-color-on-tertiary-container: #E4DFFF;
+
+  /* ── M3 Error dark ──────────────────────────────────────────────── */
+  --md-sys-color-error: #FFB4AB;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000A;
+  --md-sys-color-on-error-container: #FFDAD6;
+
+  /* ── M3 Surface dark ────────────────────────────────────────────── */
+  --md-sys-color-surface: #111318;
+  --md-sys-color-on-surface: #E1E2E8;
+  --md-sys-color-surface-variant: #41484F;
+  --md-sys-color-on-surface-variant: #C1C8D5;
+  --md-sys-color-surface-container-lowest: #0C0E13;
+  --md-sys-color-surface-container-low: #191C20;
+  --md-sys-color-surface-container: #1D2024;
+  --md-sys-color-surface-container-high: #272B2F;
+  --md-sys-color-surface-container-highest: #32353A;
+
+  /* ── M3 Outline dark ────────────────────────────────────────────── */
+  --md-sys-color-outline: #8B939E;
+  --md-sys-color-outline-variant: #41484F;
+
+  /* ── M3 Inverse dark ────────────────────────────────────────────── */
+  --md-sys-color-inverse-surface: #E1E2E8;
+  --md-sys-color-inverse-on-surface: #2E3036;
+  --md-sys-color-inverse-primary: #1A4A7A;
+
+  /* BRIDGE dark — actualiza las aliases Tailwind */
+  --color-primary: var(--md-sys-color-primary);
+  --color-primary-hover: color-mix(in srgb, var(--md-sys-color-primary) 85%, white);
+  --color-primary-light: var(--md-sys-color-primary-container);
+
+  --color-secondary: var(--md-sys-color-secondary);
+  --color-secondary-hover: color-mix(in srgb, var(--md-sys-color-secondary) 85%, white);
+  --color-secondary-light: var(--md-sys-color-secondary-container);
+
+  --color-tertiary: var(--md-sys-color-tertiary);
+  --color-tertiary-light: var(--md-sys-color-tertiary-container);
+
+  --background: var(--md-sys-color-surface);
+  --background-secondary: var(--md-sys-color-surface-container-low);
+  --background-tertiary: var(--md-sys-color-surface-container);
+
+  --surface: var(--md-sys-color-surface-container-lowest);
+  --surface-hover: var(--md-sys-color-surface-container-low);
+  --surface-border: var(--md-sys-color-outline-variant);
+
+  --text-primary: var(--md-sys-color-on-surface);
+  --text-secondary: var(--md-sys-color-on-surface-variant);
+  --text-muted: var(--md-sys-color-outline);
+  --text-inverse: var(--md-sys-color-on-primary);
+
+  --color-accent: var(--md-sys-color-tertiary);
+  --color-accent-hover: var(--md-sys-color-on-tertiary-container);
+  --color-accent-light: var(--md-sys-color-tertiary-container);
+
+  --color-success: #72BB50;
+  --color-warning: #FAC30A;
+  --color-error: var(--md-sys-color-error);
+  --color-violet: var(--md-sys-color-tertiary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   GLOBAL M3 BASE STYLES
+   ═══════════════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  font: var(--md-sys-typescale-body-large);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* M3 Focus visible — accesibilidad */
+:focus-visible {
+  outline: 3px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   M3 UTILITY CLASSES — Reutilizables en toda la app
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── M3 Filled Button ─────────────────────────────────────────────── */
+.md3-btn-filled {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--md-sys-shape-corner-full);
+  border: none;
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font: var(--md-sys-typescale-label-large);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md3-btn-filled::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-primary);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+  border-radius: inherit;
+}
+
+.md3-btn-filled:hover::before {
+  opacity: 0.08;
+}
+
+.md3-btn-filled:active::before {
+  opacity: 0.12;
+}
+
+.md3-btn-filled:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+}
+
+/* ── M3 Filled Tonal Button ───────────────────────────────────────── */
+.md3-btn-tonal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--md-sys-shape-corner-full);
+  border: none;
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  font: var(--md-sys-typescale-label-large);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md3-btn-tonal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-secondary-container);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+  border-radius: inherit;
+}
+
+.md3-btn-tonal:hover::before {
+  opacity: 0.08;
+}
+
+.md3-btn-tonal:active::before {
+  opacity: 0.12;
+}
+
+.md3-btn-tonal:hover {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+}
+
+/* ── M3 Outlined Button ───────────────────────────────────────────── */
+.md3-btn-outlined {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--md-sys-shape-corner-full);
+  border: 1px solid var(--md-sys-color-outline);
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  font: var(--md-sys-typescale-label-large);
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition:
+    border-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+.md3-btn-outlined::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-primary);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+  border-radius: inherit;
+}
+
+.md3-btn-outlined:hover::before {
+  opacity: 0.08;
+}
+
+.md3-btn-outlined:active::before {
+  opacity: 0.12;
+}
+
+/* ── M3 Card — Outlined ───────────────────────────────────────────── */
+.md3-card-outlined {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface);
+  transition:
+    box-shadow var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
+    border-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
+}
+
+/* ── M3 Card — Filled ─────────────────────────────────────────────── */
+.md3-card-filled {
+  border: none;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+/* ── M3 Card — Elevated ───────────────────────────────────────────── */
+.md3-card-elevated {
+  border: none;
+  border-radius: var(--md-sys-shape-corner-medium);
+  background: var(--md-sys-color-surface-container-low);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 1px 3px 1px rgba(0, 0, 0, .15);
+}
+
+/* ── M3 Tonal Icon Container ──────────────────────────────────────── */
+.md3-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--md-sys-shape-corner-full);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  flex-shrink: 0;
+}
+
+.md3-icon-container--secondary {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.md3-icon-container--tertiary {
+  background: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
+}
+
+/* ── M3 Divider ───────────────────────────────────────────────────── */
+.md3-divider {
+  height: 1px;
+  background: var(--md-sys-color-outline-variant);
+  border: none;
+}
+
+/* ── M3 Chip — Assist ─────────────────────────────────────────────── */
+.md3-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface-variant);
+  font: var(--md-sys-typescale-label-large);
+  cursor: default;
+}
+
+/* ── Custom Global Animations & Reveal Effects ────────────────────── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

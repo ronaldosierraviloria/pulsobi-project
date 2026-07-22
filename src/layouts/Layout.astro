@@ -1,0 +1,61 @@
+---
+import '../app.css';
+---
+<!doctype html>
+<html lang="es" data-theme="light">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/webp" href="/logo.webp" />
+		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="PulsoBI — Soluciones inteligentes de datos, automatización y dashboards para impulsar decisiones estratégicas en tu empresa."
+		/>
+
+		<title>PulsoBI — Data Intelligence & Automatización</title>
+
+		<script is:inline>
+			(function () {
+				var theme = localStorage.getItem("theme");
+				if (theme === "dark") {
+					document.documentElement.setAttribute("data-theme", "dark");
+				} else if (theme === "light") {
+					document.documentElement.setAttribute(
+						"data-theme",
+						"light",
+					);
+				} else {
+					if (
+						window.matchMedia("(prefers-color-scheme: dark)")
+							.matches
+					) {
+						document.documentElement.setAttribute(
+							"data-theme",
+							"dark",
+						);
+					}
+				}
+			})();
+		</script>
+	</head>
+	<body class="font-clash">
+		<slot />
+		
+		<script is:inline>
+			document.addEventListener("DOMContentLoaded", () => {
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add("revealed");
+						}
+					});
+				}, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+				document.querySelectorAll(".reveal-up, .reveal-fade").forEach((el) => {
+					observer.observe(el);
+				});
+			});
+		</script>
+	</body>
+</html>

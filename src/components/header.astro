@@ -1,0 +1,477 @@
+---
+import { Image } from "astro:assets";
+import DashboardImg from "../assets/dashboardimages/screen.png";
+import Logo from "../assets/logos/logo.webp";
+---
+
+<header
+    class="flex flex-col items-center px-4 pt-20 pb-4 relative overflow-hidden"
+    style="background: linear-gradient(135deg, #12294f 0%, #0f111a 45%, #1c1140 100%);"
+>
+    <nav
+        id="main-nav"
+        class="fixed top-0 left-0 w-full z-50 px-4 py-3 transition-all duration-500"
+    >
+        <!-- Glass pill container -->
+        <div
+            id="nav-inner"
+            class="max-w-5xl mx-auto flex items-center justify-between gap-4 px-5 py-2.5 rounded-2xl transition-all duration-500 bg-white md:bg-[#0d1b36]/95 md:backdrop-blur-xl md:border md:border-white/10"
+        >
+            <!-- Logo -->
+            <a
+                href="#"
+                class="focus-visible:outline-none flex items-center gap-2 group transition-transform hover:scale-105 shrink-0"
+            >
+                <Image src={Logo} alt="PulsoBI" class="h-9 w-auto" />
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-1">
+                <a
+                    href="#"
+                    class="nav-link relative text-white/70 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-white hover:bg-white/8"
+                    >Inicio</a
+                >
+                <a
+                    href="#servicios"
+                    class="nav-link relative text-white/70 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-white hover:bg-white/8"
+                    >Servicios</a
+                >
+                <a
+                    href="#nosotros"
+                    class="nav-link relative text-white/70 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-white hover:bg-white/8"
+                    >Nosotros</a
+                >
+            </div>
+
+            <!-- Desktop CTA -->
+            <a
+                href="#contacto"
+                class="hidden md:inline-flex items-center gap-2 h-9 px-5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#1A4A7A] to-[#5b5791] transition-all duration-300 hover:brightness-110 hover:scale-105 hover:shadow-[0_0_20px_rgba(26,74,122,0.5)] active:scale-95 shrink-0"
+            >
+                Contacto
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+                    ></path></svg
+                >
+            </a>
+
+            <!-- Mobile open -->
+            <button
+                id="open-menu"
+                class="md:hidden p-2 rounded-xl text-black transition-all hover:scale-110 active:scale-95"
+                aria-label="Abrir menú"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M4 12h16"></path><path d="M4 18h16"></path><path
+                        d="M4 6h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile fullscreen menu overlay -->
+        <div
+            id="menu"
+            class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[#0C0E13]/95 backdrop-blur-2xl transition-[opacity,visibility] duration-300 opacity-0 invisible"
+        >
+            <!-- Decorative glow -->
+            <div
+                class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1A4A7A]/20 rounded-full blur-[100px] pointer-events-none"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#5b5791]/15 rounded-full blur-[80px] pointer-events-none"
+            >
+            </div>
+
+            <!-- Logo in menu -->
+            <div class="absolute top-5 left-5">
+                <Image src={Logo} alt="PulsoBI" class="h-9 w-auto" />
+            </div>
+
+            <!-- Close button -->
+            <button
+                id="close-menu"
+                class="absolute top-4 right-4 p-2.5 rounded-xl text-white/70 bg-white/10 hover:bg-white/20 hover:text-white border border-white/10 transition-all hover:scale-110 active:scale-95"
+                aria-label="Cerrar menú"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+
+            <!-- Mobile nav links -->
+            <nav class="flex flex-col items-center gap-2 w-full max-w-xs">
+                <a
+                    href="#"
+                    class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                    >Inicio</a
+                >
+                <a
+                    href="#servicios"
+                    class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                    >Servicios</a
+                >
+                <a
+                    href="#nosotros"
+                    class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                    >Nosotros</a
+                >
+            </nav>
+
+            <!-- Mobile CTA -->
+            <a
+                href="#contacto"
+                class="mobile-nav-link inline-flex items-center gap-2 h-12 px-8 rounded-lg font-bold text-base text-white bg-[#1A4A7A] hover:brightness-110 hover:scale-105 transition-all shadow-[0_0_20px_rgba(26,74,122,0.4)]"
+            >
+                Contacto
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+                    ></path></svg
+                >
+            </a>
+        </div>
+    </nav>
+    <div
+        class="relative z-10 flex flex-col items-center px-4 max-w-4xl mx-auto pt-24 pb-8 w-full"
+    >
+        <h1
+            class="text-4xl md:text-[70px] text-center leading-tight font-medium text-white font-clash"
+        >
+            El futuro de tu negocio empieza con:
+        </h1>
+        <div class="mt-4 mb-2 md:mt-6 md:mb-4 flex justify-center mx-4 md:mx-0">
+            <div
+                class="bg-white px-5 py-2 md:px-8 md:py-3 rounded-full shadow-md"
+            >
+                <span
+                    id="animated-word"
+                    class="text-[2rem] leading-tight md:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[var(--md-sys-color-primary)] to-[var(--md-sys-color-tertiary)] font-nippo block text-center"
+                    >Estrategia</span
+                >
+            </div>
+        </div>
+        <p
+            class="text-base md:text-xl text-white/90 text-center max-w-[600px] mt-4 leading-relaxed"
+        >
+            Creamos páginas web, automatizamos procesos y convertimos tus datos
+            en decisiones inteligentes.
+        </p>
+    </div>
+
+    <div
+        id="dashboard"
+        class="hidden md:block w-full max-w-4xl z-1 object-contain shadow-md transition-all duration-300 ease-out"
+        style="transform: perspective(1000px) rotateX(15deg) scale(0.95); margin-top: 28px;"
+    >
+        <Image
+            src={DashboardImg}
+            alt="dashboardImg"
+            class="w-full object-contain rounded-[20px]"
+        />
+    </div>
+
+    <div class="hidden md:block custom-shape-divider-bottom-1783797879">
+        <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+        >
+            <path
+                d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+</header>
+
+<style is:inline>
+    /* ═══════════════════════════════════════════════════════════════
+       HEADER LIGHT MODE — colores claros para el hero
+       ═══════════════════════════════════════════════════════════════ */
+    header {
+        --md-sys-color-primary: #1a4a7a;
+        --md-sys-color-on-primary: #ffffff;
+        --md-sys-color-primary-container: #d4e4ff;
+        --md-sys-color-on-primary-container: #001c39;
+        --md-sys-color-secondary: #4a6785;
+        --md-sys-color-on-secondary: #ffffff;
+        --md-sys-color-secondary-container: #cce5ff;
+        --md-sys-color-on-secondary-container: #002135;
+        --md-sys-color-tertiary: #5b5791;
+        --md-sys-color-on-tertiary: #ffffff;
+        --md-sys-color-tertiary-container: #e4dfff;
+        --md-sys-color-on-tertiary-container: #18144e;
+        --md-sys-color-surface: #f8fafd;
+        --md-sys-color-on-surface: #191c20;
+        --md-sys-color-surface-variant: #dde3f0;
+        --md-sys-color-on-surface-variant: #41484f;
+        --md-sys-color-surface-container-lowest: #ffffff;
+        --md-sys-color-surface-container-low: #f2f4fa;
+        --md-sys-color-surface-container: #eceef4;
+        --md-sys-color-surface-container-high: #e6e8ef;
+        --md-sys-color-surface-container-highest: #e0e3e9;
+        --md-sys-color-outline: #717a86;
+        --md-sys-color-outline-variant: #c1c8d5;
+        --md-sys-color-inverse-surface: #2e3036;
+        --md-sys-color-inverse-on-surface: #eff0f6;
+        --md-sys-color-inverse-primary: #a3c8ff;
+
+        background: var(--md-sys-color-surface);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       NAV — glass pill, siempre visible desde el top
+       ═══════════════════════════════════════════════════════════════ */
+    #main-nav {
+        /* transparent wrapper - the pill handles the bg */
+    }
+
+    /* Active nav link: underline glow dot */
+    .nav-link.active {
+        color: white !important;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 2px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+       SHAPE DIVIDER — wave transition dark header → light section
+       ═══════════════════════════════════════════════════════════════ */
+    .custom-shape-divider-bottom-1783797879 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1783797879 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 82px;
+    }
+
+    .custom-shape-divider-bottom-1783797879 .shape-fill {
+        fill: var(--md-sys-color-surface);
+        shape-rendering: geometricPrecision;
+    }
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(3deg);
+        }
+    }
+    @keyframes float-slow {
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-15px) rotate(-3deg);
+        }
+    }
+    @keyframes float-delayed {
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-25px) rotate(2deg);
+        }
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-float-slow {
+        animation: float-slow 8s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+        animation: float-delayed 7s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    #animated-word {
+        transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
+    }
+    #animated-word.fade-out {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    #animated-word.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    #sun-icon,
+    #moon-icon,
+    #system-icon {
+        display: none;
+    }
+    [data-theme-setting="light"] #sun-icon {
+        display: block;
+    }
+    [data-theme-setting="dark"] #moon-icon {
+        display: block;
+    }
+    [data-theme-setting="system"] #system-icon {
+        display: block;
+    }
+    /* Mobile menu open state */
+    #menu.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+</style>
+
+<script>
+    const openMenuBtn = document.getElementById("open-menu");
+    const closeMenuBtn = document.getElementById("close-menu");
+    const menu = document.getElementById("menu");
+
+    function openMenu() {
+        menu.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+        menu.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    openMenuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+
+    // Close menu on mobile nav link click
+    document.querySelectorAll(".mobile-nav-link").forEach((item) => {
+        item.addEventListener("click", closeMenu);
+    });
+
+    const words = ["Estrategia", "Automatización", "Datos"];
+    const wordEl = document.getElementById("animated-word");
+    let wordIndex = 0;
+
+    function cycleWords() {
+        wordEl.classList.add("fade-out");
+        setTimeout(() => {
+            wordIndex = (wordIndex + 1) % words.length;
+            wordEl.textContent = words[wordIndex];
+            wordEl.classList.remove("fade-out");
+            wordEl.classList.add("fade-in");
+            setTimeout(() => {
+                wordEl.classList.remove("fade-in");
+            }, 400);
+        }, 400);
+    }
+
+    setInterval(cycleWords, 5000);
+
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function updateActiveLink() {
+        const sections = [
+            { id: "", el: null },
+            { id: "servicios", el: document.getElementById("servicios") },
+            { id: "nosotros", el: document.getElementById("nosotros") },
+        ];
+
+        let activeId = "";
+
+        if (window.scrollY < 150) {
+            activeId = "";
+        } else {
+            for (const section of sections) {
+                if (section.el) {
+                    const rect = section.el.getBoundingClientRect();
+                    if (rect.top <= 120) {
+                        activeId = section.id;
+                    }
+                }
+            }
+        }
+
+        navLinks.forEach((link) => {
+            const href = link.getAttribute("href").replace("#", "");
+            if (href === activeId) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    updateActiveLink();
+
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveLink();
+
+                const dashboard = document.getElementById("dashboard");
+                if (dashboard) {
+                    const scrolled = window.scrollY;
+                    const progress = Math.min(1, scrolled / 400);
+
+                    const tilt = 15 * (1 - progress);
+                    const scale = 0.95 + 0.05 * progress;
+                    const marginTop = 28 + 20 * progress;
+
+                    dashboard.style.transform = `perspective(1000px) rotateX(${tilt}deg) scale(${scale})`;
+                    dashboard.style.marginTop = `${marginTop}px`;
+                }
+
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+</script>

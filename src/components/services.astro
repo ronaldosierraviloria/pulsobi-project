@@ -1,0 +1,207 @@
+---
+const services = [
+  {
+    num: "01",
+    title: "Análisis de Datos",
+    description:
+      "Transformamos datos crudos en información valiosa. Nuestro equipo extrae, limpia y modela tus datos para revelar patrones, tendencias y oportunidades que impulsan decisiones estratégicas.",
+    benefits: [
+      "Decisiones basadas en datos y métricas precisas.",
+      "Identificación temprana de tendencias del mercado.",
+      "Optimización de costos operativos.",
+      "Visibilidad completa del rendimiento de tu negocio.",
+    ],
+  },
+  {
+    num: "02",
+    title: "IA & Automatización",
+    description:
+      "Optimiza tus procesos con inteligencia artificial y flujos automatizados. Reducimos tiempos y errores para que tu equipo se enfoque en lo importante.",
+    benefits: [
+      "Reducción de tareas manuales y repetitivas.",
+      "Menor margen de error humano en los procesos.",
+      "Integración de sistemas y plataformas sin fricciones.",
+      "Aumento exponencial en la productividad del equipo.",
+    ],
+  },
+  {
+    num: "03",
+    title: "Paginas Web",
+    description:
+      "Diseñamos páginas de alto impacto convertidas en ventas. Desde la estrategia visual hasta la implementación, creamos experiencias que capturan y convierten a tu audiencia.",
+    benefits: [
+      "Diseño responsivo optimizado para todos los dispositivos.",
+      "Tiempos de carga ultra rápidos para retener usuarios.",
+      "Integración con tus herramientas de negocio.",
+    ],
+  },
+];
+---
+
+<section
+  class="flex flex-col items-center px-4 py-24 bg-[var(--md-sys-color-surface-container-low)] overflow-hidden"
+  id="servicios"
+>
+  <h2
+    class="text-4xl md:text-5xl font-medium font-nippo text-[var(--md-sys-color-primary)] text-center max-w-[600px] reveal-up"
+  >
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--md-sys-color-primary)] to-[var(--md-sys-color-tertiary)]">Servicios</span> <span class="font-clash text-[var(--md-sys-color-on-surface)] text-4xl md:text-5xl">
+      que transforman tu negocio
+    </span>
+  </h2>
+  <p
+    class="text-base text-[var(--md-sys-color-on-surface-variant)] text-center max-w-[500px] mt-4 mb-12 reveal-up"
+    style="transition-delay: 150ms;"
+  >
+    Soluciones inteligentes de datos, automatización y dashboards para impulsar
+    decisiones estratégicas en tu empresa.
+  </p>
+
+  <div class="w-[400px] h-px bg-[var(--md-sys-color-outline-variant)] mb-16 reveal-up" style="transition-delay: 250ms;"></div>
+
+  <div class="flex flex-col gap-24 md:gap-32 w-full max-w-[1100px]">
+    {
+      services.map((service, index) => (
+        <div
+          class={`flex flex-col md:flex-row items-center gap-10 md:gap-16 w-full ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
+        >
+          <div
+            class={`md:w-[45%] flex flex-col items-start text-left reveal-up`}
+          >
+            <span
+              class="text-sm font-semibold text-[var(--md-sys-color-primary)] mb-4 tracking-widest service-counter"
+              data-target={parseInt(service.num, 10)}
+            >
+              00
+            </span>
+            <h3 class="text-3xl md:text-4xl font-medium text-[var(--md-sys-color-on-surface)] mb-6 leading-tight font-clash">
+              {service.title}
+            </h3>
+            <p class="text-base md:text-lg text-[var(--md-sys-color-on-surface-variant)] leading-relaxed font-clash">
+              {service.description}
+            </p>
+          </div>
+
+          <div
+            class={`md:w-[55%] w-full flex flex-col justify-center reveal-up`}
+            style="transition-delay: 200ms;"
+          >
+            <div class="md3-card-outlined p-8 md:p-10 bg-[var(--md-sys-color-surface)] transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[var(--md-sys-color-primary)]/50">
+              <h4 class="text-xl md:text-2xl font-medium text-[var(--md-sys-color-on-surface)] mb-6 font-clash">
+                Impacto Estratégico
+              </h4>
+              <ul class="flex flex-col gap-5">
+                {service.benefits.map((benefit) => (
+                  <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 mt-1 size-6 md3-icon-container">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    </div>
+                    <span class="text-base text-[var(--md-sys-color-on-surface-variant)] leading-relaxed font-clash">
+                      {benefit}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .is-revealed {
+    opacity: 1;
+    transform: translate(0);
+  }
+</style>
+
+<script>
+  function setupScrollAnimations() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-revealed");
+
+            const counter = entry.target.querySelector(".service-counter");
+            if (counter && !counter.classList.contains("counted")) {
+              counter.classList.add("counted");
+              const target = parseInt(counter.dataset.target || "0", 10);
+              const duration = 1500;
+              const start = performance.now();
+              function update(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                counter.textContent = Math.floor(eased * target)
+                  .toString()
+                  .padStart(2, "0");
+                if (progress < 1) requestAnimationFrame(update);
+              }
+              requestAnimationFrame(update);
+            }
+
+            // Deja de observar una vez animado para que no se repita
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      },
+    );
+
+    document
+      .querySelectorAll(".reveal-up, .reveal-left, .reveal-right")
+      .forEach((el) => {
+        observer.observe(el);
+      });
+  }
+
+  // Ejecutar en Astro en cada navegación si usas ViewTransitions (opcional, buena práctica)
+  document.addEventListener("astro:page-load", setupScrollAnimations);
+
+  // Ejecutar inmediatamente
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupScrollAnimations);
+  } else {
+    setupScrollAnimations();
+  }
+</script>

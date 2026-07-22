@@ -1,0 +1,277 @@
+<section
+  class="px-4 py-24 bg-[var(--md-sys-color-surface)] relative overflow-hidden"
+  id="contacto"
+>
+  <!-- Subtle primary glow -->
+  <div
+    class="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--md-sys-color-primary-container)]/10 rounded-full blur-[120px] pointer-events-none"
+  >
+  </div>
+  <div
+    class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[var(--md-sys-color-secondary-container)]/10 rounded-full blur-[100px] pointer-events-none"
+  >
+  </div>
+  <div class="w-full max-w-4xl mx-auto">
+    <div class="text-center mb-16 reveal-up">
+      <p
+        class="text-xs font-medium tracking-widest uppercase text-[var(--md-sys-color-primary)] mb-4"
+      >
+        Contáctanos
+      </p>
+      <h2
+        class="font-nippo text-[var(--md-sys-color-on-surface)] font-normal leading-tight mb-5"
+        style="font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em;"
+      >
+        Hablemos de<br />tu proyecto
+      </h2>
+      <p
+        class="text-[var(--md-sys-color-on-surface-variant)] max-w-md mx-auto leading-relaxed mb-8 font-clash"
+      >
+        Cuéntanos qué necesitas. Te respondemos en menos de 24 horas laborables.
+      </p>
+      <div
+        class="w-[400px] max-w-full h-px bg-[var(--md-sys-color-outline-variant)] mx-auto"
+      >
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 reveal-up" style="transition-delay: 150ms;">
+      <div class="flex flex-col gap-6">
+        <a
+          href="mailto:contacto@pulsobi.com"
+          class="flex items-center gap-4 p-5 md3-card-outlined bg-[var(--md-sys-color-surface-container-low)] hover:border-[var(--md-sys-color-primary)] transition-colors"
+        >
+          <div
+            class="flex items-center justify-center size-12 md3-icon-container shrink-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-xs text-[var(--md-sys-color-on-surface-variant)] font-medium uppercase tracking-wider font-clash"
+              >Email</span
+            >
+            <span
+              class="text-[var(--md-sys-color-on-surface)] font-medium font-clash"
+              >contactopulsobi@gmail.com</span
+            >
+          </div>
+        </a>
+
+        <a
+          href="https://linkedin.com/company/pulsobi"
+          target="_blank"
+          class="flex items-center gap-4 p-5 md3-card-outlined bg-[var(--md-sys-color-surface-container-low)] hover:border-[var(--md-sys-color-secondary)] transition-colors"
+        >
+          <div
+            class="flex items-center justify-center size-12 md3-icon-container md3-icon-container--secondary shrink-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-xs text-[var(--md-sys-color-on-surface-variant)] font-medium uppercase tracking-wider font-clash"
+              >LinkedIn</span
+            >
+            <span
+              class="text-[var(--md-sys-color-on-surface)] font-medium font-clash"
+              >/company/pulsobi</span
+            >
+          </div>
+        </a>
+
+        <div
+          class="flex items-center gap-4 p-5 md3-card-outlined bg-[var(--md-sys-color-surface-container-low)]"
+        >
+          <div
+            class="flex items-center justify-center size-12 md3-icon-container md3-icon-container--tertiary shrink-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span
+              class="text-xs text-[var(--md-sys-color-on-surface-variant)] font-medium uppercase tracking-wider font-clash"
+              >Respuesta</span
+            >
+            <span
+              class="text-[var(--md-sys-color-on-surface)] font-medium font-clash"
+              >En menos de 24 horas.</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <form
+        id="contact-form"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="flex flex-col gap-5 bg-[var(--md-sys-color-surface-container)] p-8 rounded-[var(--md-sys-shape-corner-extra-large)] border border-[var(--md-sys-color-outline-variant)]"
+      >
+        <input
+          type="hidden"
+          name="access_key"
+          value="e30bda3b-ec56-48cc-a242-c9f3dc4cfff5"
+        />
+        <input
+          type="hidden"
+          name="subject"
+          value="Nuevo mensaje desde la web de PulsoBI"
+        />
+        <!-- Anti-Spam (Honeypot) y Configuración de Remitente -->
+        <input type="hidden" name="from_name" value="Contacto PulsoBI" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+        <h3
+          class="text-xl font-medium text-[var(--md-sys-color-on-surface)] mb-2 font-clash"
+        >
+          Envíanos un mensaje
+        </h3>
+
+        <div class="flex flex-col gap-2">
+          <label
+            for="name"
+            class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="w-full px-4 py-3 text-sm text-[var(--md-sys-color-on-surface)] bg-[var(--md-sys-color-surface)] border border-[var(--md-sys-color-outline-variant)] rounded-[var(--md-sys-shape-corner-small)] focus:outline-none focus:border-[var(--md-sys-color-primary)] focus:ring-4 focus:ring-[var(--md-sys-color-primary)]/20 transition-all duration-300 font-clash shadow-sm"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label
+            for="email"
+            class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full px-4 py-3 text-sm text-[var(--md-sys-color-on-surface)] bg-[var(--md-sys-color-surface)] border border-[var(--md-sys-color-outline-variant)] rounded-[var(--md-sys-shape-corner-small)] focus:outline-none focus:border-[var(--md-sys-color-primary)] focus:ring-4 focus:ring-[var(--md-sys-color-primary)]/20 transition-all duration-300 font-clash shadow-sm"
+            required
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label
+            for="message"
+            class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
+            >Mensaje</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            class="w-full px-4 py-3 text-sm text-[var(--md-sys-color-on-surface)] bg-[var(--md-sys-color-surface)] border border-[var(--md-sys-color-outline-variant)] rounded-[var(--md-sys-shape-corner-small)] focus:outline-none focus:border-[var(--md-sys-color-primary)] focus:ring-4 focus:ring-[var(--md-sys-color-primary)]/20 transition-all duration-300 resize-none font-clash shadow-sm"
+            required></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="md3-btn-filled w-full h-12 flex items-center justify-center cursor-pointer mt-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_14px_rgba(26,74,122,0.4)]"
+        >
+          Enviar mensaje
+        </button>
+        <p
+          id="form-result"
+          class="hidden text-sm font-medium text-center mt-2 text-[var(--md-sys-color-primary)] font-clash"
+        >
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const result = document.getElementById("form-result");
+
+  if (form && result) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      result.textContent = "Enviando mensaje...";
+      result.classList.remove("hidden");
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status == 200) {
+            result.textContent =
+              "¡Mensaje enviado con éxito! Te contactaremos pronto.";
+          } else {
+            console.log(response);
+            result.textContent = "Ocurrió un problema: " + json.message;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          result.textContent = "Hubo un error al enviar el mensaje.";
+        })
+        .then(function () {
+          form.reset();
+          setTimeout(() => {
+            result.classList.add("hidden");
+          }, 5000);
+        });
+    });
+  }
+</script>

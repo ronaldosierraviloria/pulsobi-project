@@ -1,0 +1,128 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logos/logo.webp";
+---
+
+<footer
+  class="w-full bg-[var(--md-sys-color-surface-container)] border-t border-[var(--md-sys-color-outline-variant)] text-[var(--md-sys-color-on-surface-variant)] py-12"
+>
+  <div
+    class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
+  >
+    <!-- Logo -->
+    <a href="#">
+      <Image src={Logo} alt="PulsoBI" class="h-10 w-auto" />
+    </a>
+
+    <!-- Single Page Links -->
+    <div class="flex flex-wrap items-center justify-center gap-6">
+      <a
+        href="#servicios"
+        class="text-sm hover:text-[var(--md-sys-color-primary)] transition-colors font-clash"
+        >Servicios</a
+      >
+      <a
+        href="#nosotros"
+        class="text-sm hover:text-[var(--md-sys-color-primary)] transition-colors font-clash"
+        >¿Por qué elegirnos?</a
+      >
+      <a
+        href="#contacto"
+        class="text-sm hover:text-[var(--md-sys-color-primary)] transition-colors font-clash"
+        >Contacto</a
+      >
+    </div>
+
+    <!-- Social / Contact Icons -->
+    <div class="flex items-center gap-4">
+      <a
+        href="https://linkedin.com/company/pulsobi"
+        target="_blank"
+        class="text-[var(--md-sys-color-outline)] hover:text-[var(--md-sys-color-primary)] transition-colors"
+        aria-label="LinkedIn"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <rect
+            x="2"
+            y="9"
+            width="4"
+            height="12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></rect>
+          <circle
+            cx="4"
+            cy="4"
+            r="2"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></circle>
+        </svg>
+      </a>
+      <a
+        href="mailto:contacto@pulsobi.com"
+        class="text-[var(--md-sys-color-outline)] hover:text-[var(--md-sys-color-primary)] transition-colors"
+        aria-label="Email"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="2"
+            y="4"
+            width="20"
+            height="16"
+            rx="2"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></rect>
+          <path
+            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="max-w-5xl mx-auto px-4 mt-10 pt-6 border-t border-[var(--md-sys-color-outline-variant)] flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-clash"
+  >
+    <p>
+      &copy; {new Date().getFullYear()} PulsoBI. Todos los derechos reservados.
+    </p>
+    <div class="flex gap-4">
+      <a
+        href="#"
+        class="hover:text-[var(--md-sys-color-on-surface)] transition-colors"
+        >Términos y Condiciones</a
+      >
+      <a
+        href="#"
+        class="hover:text-[var(--md-sys-color-on-surface)] transition-colors"
+        >Privacidad</a
+      >
+    </div>
+  </div>
+</footer>

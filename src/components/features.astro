@@ -1,0 +1,1276 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="features-dark flex flex-col items-center px-4 py-24 relative overflow-hidden"
+>
+  <!-- Subtle accent glow -->
+  <div
+    class="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--md-sys-color-tertiary-container)]/10 rounded-full blur-[120px] pointer-events-none"
+  >
+  </div>
+  <h2
+    class="text-4xl md:text-5xl font-medium text-center max-w-[600px] font-clash"
+  >
+    <span class="font-nippo text-[var(--md-sys-color-primary)]">Funcionalidades </span>
+    <span class="text-[var(--md-sys-color-on-surface)]"
+          >que potencian tu negocio.</span
+    >
+  </h2>
+  <p
+    class="text-base text-[var(--md-sys-color-on-surface-variant)] text-center max-w-[500px] mt-4 font-clash"
+  >
+    Descubre las herramientas de análisis de datos, automatización con IA y desarrollo web que llevarán tu negocio al siguiente nivel.
+  </p>
+
+  <div class="flex flex-col gap-20 mt-20 w-full max-w-5xl">
+    <!-- Row 1: Text + Animated Cards -->
+    <div class="flex flex-col md:flex-row items-center gap-10 reveal-up">
+      <div class="md:w-[30%]">
+        <span></span>
+        <h3 class="text-2xl font-medium text-[var(--md-sys-color-on-surface-variant)]">Integración de Fuentes de Datos
+        </h3>
+        <p class="text-base text-[var(--md-sys-color-on-surface)] mt-3 leading-relaxed">
+          Conecta bases de datos, APIs, archivos CSV y más en un solo lugar.
+Incluye limpieza y visualización de datos para que tengas siempre
+información clara y lista para decidir.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 mt-5">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="lucide:database" class="size-8 text-[var(--md-sys-color-on-surface)]" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Bases de Datos</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:microsoftexcel" class="size-8" style="color: #217346" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Excel</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:powerbi" class="size-8" style="color: #F2C811" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Power BI</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:looker" class="size-8 text-[var(--md-sys-color-on-surface)]" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Looker Studio</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:python" class="size-8" style="color: #3776AB" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Python</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:pandas" class="size-8" style="color: #150458" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Pandas</span>
+          </div>
+        </div>
+      </div>
+      <span></span>
+      <div>
+      </div>
+      <div
+        class="hidden md:block md:w-[70%] w-full rounded-2xl border border-primary/30 overflow-hidden bg-background-secondary"
+      >
+        <!-- Terminal chrome header -->
+        <div
+          class="flex items-center gap-3 px-4 py-2.5 bg-background/60 border-b border-primary/10"
+        >
+          <div class="flex items-center gap-1.5 shrink-0">
+            <div
+              class="size-3 rounded-full bg-[#ff5f57] shadow-[0_0_4px_#ff5f57aa]"
+            >
+            </div>
+            <div
+              class="size-3 rounded-full bg-[#febc2e] shadow-[0_0_4px_#febc2eaa]"
+            >
+            </div>
+            <div
+              class="size-3 rounded-full bg-[#28c840] shadow-[0_0_4px_#28c840aa]"
+            >
+            </div>
+          </div>
+          <div class="flex-1 flex justify-center">
+            <span
+              class="text-[11px] font-mono text-content-secondary/60 tracking-wide"
+            >
+              ~/pulsobi/data-proccesing <span class="text-secondary/60">—</span
+              > bash
+            </span>
+          </div>
+          <div class="w-[54px] shrink-0"></div>
+        </div>
+
+        <div class="relative my-16 flex flex-col gap-y-7 lg:my-8">
+          <!-- Card 1 -->
+          <div
+            class="z-10 flex w-48 flex-col self-start ml-20 mt-6 rounded-xl bg-background/70 p-4 shadow-lg ring-1 ring-surface-border backdrop-blur-xl"
+          >
+            <div
+              class="flex size-10 items-center justify-center rounded-lg bg-violet/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-violet"
+              >
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <p class="mt-3 text-sm font-medium text-content">
+              Conecta tus datos
+            </p>
+            <p class="mt-1 text-xs text-content-secondary">
+              Fuentes, APIs y CSVs
+            </p>
+          </div>
+
+          <!-- SVG Connector 1 → 2 -->
+          <svg
+            class="line-connector absolute z-0 hidden w-1/2 xl:top-[25%] xl:left-[22%] xl:block"
+            viewBox="0 0 200 300"
+          >
+            <path
+              class="base-line"
+              d="M1 0.5V50C1 63.8071 12.1929 75 26 75H70"
+              stroke="var(--color-primary)"
+              stroke-width="1"
+              fill="transparent"
+              opacity="0.15"></path>
+            <path
+              class="beam-line"
+              d="M1 0.5V50C1 63.8071 12.1929 75 26 75H70"
+              stroke="var(--color-secondary)"
+              stroke-width="2"
+              fill="transparent"></path>
+          </svg>
+
+          <!-- Card 2 -->
+          <div
+            class="z-10 flex w-48 flex-col self-center ml-10 rounded-xl bg-background/70 p-4 shadow-lg ring-1 ring-surface-border backdrop-blur-xl"
+          >
+            <div
+              class="flex size-10 items-center justify-center rounded-lg bg-accent/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-accent"
+              >
+                <path d="M3 3v18h18"></path>
+                <path d="M7 16l4-8 4 4 4-6"></path>
+              </svg>
+            </div>
+            <p class="mt-3 text-sm font-medium text-content">
+              Procesamiento de información
+            </p>
+            <p class="mt-1 text-xs text-content-secondary">
+              Proceso de limpieza, tratamiento y modelamiento de datos.
+            </p>
+          </div>
+
+          <!-- SVG Connector 2 → 3 -->
+          <svg
+            class="line-connector absolute z-0 hidden w-1/2 xl:top-[55%] xl:left-[63%] xl:block"
+            viewBox="0 0 200 300"
+          >
+            <path
+              class="base-line"
+              d="M0.5 1.5H56C69.8071 1.5 81 12.6929 81 26.5V73"
+              stroke="var(--color-primary)"
+              stroke-width="1"
+              fill="transparent"
+              opacity="0.15"></path>
+            <path
+              class="beam-line"
+              d="M0.5 1.5H56C69.8071 1.5 81 12.6929 81 26.5V73"
+              stroke="var(--color-secondary)"
+              stroke-width="2"
+              fill="transparent"></path>
+          </svg>
+
+          <!-- Card 3 -->
+          <div
+            class="z-10 flex w-48 flex-col self-end mr-10 rounded-xl bg-background/70 p-4 shadow-lg ring-1 ring-surface-border backdrop-blur-xl"
+          >
+            <div
+              class="flex size-10 items-center justify-center rounded-lg bg-success/10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-success"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <path d="M14 2v6h6"></path>
+                <path d="M16 13H8"></path>
+                <path d="M16 17H8"></path>
+                <path d="M10 9H8"></path>
+              </svg>
+            </div>
+            <p class="mt-3 text-sm font-medium text-content">
+              Visualización de la información.
+            </p>
+            <p class="mt-1 text-xs text-content-secondary">
+              Dashboard interactivo y dinamico que permite toma de desiciones estrategicas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: AI Automation Flow -->
+    <div class="flex flex-col md:flex-row-reverse items-center gap-10 reveal-up" style="transition-delay: 100ms;">
+      <div class="md:w-[30%]">
+        <h3 class="text-2xl font-medium text-[var(--md-sys-color-on-surface-variant)]">
+          Automatiza tus Procesos
+        </h3>
+        <p class="text-base text-[var(--md-sys-color-on-surface-variant)] mt-3 leading-relaxed">
+          Un agente de IA orquesta tus flujos de trabajo: recibe eventos, toma decisiones y ejecuta acciones en tus herramientas, sin intervención humana — para que tu equipo se enfoque en lo importante.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 mt-5">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:python" class="size-8" style="color: #3776AB" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Python</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="lucide:brain-circuit" class="size-8 text-[var(--md-sys-color-on-surface)]" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">IA</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:n8n" class="size-8 text-[var(--md-sys-color-on-surface)]" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">N8N</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden md:block md:w-[70%] w-full rounded-2xl border border-primary/30 overflow-hidden bg-background-secondary"
+      >
+        <!-- Terminal chrome header -->
+        <div
+          class="flex items-center gap-3 px-4 py-2.5 bg-background/60 border-b border-primary/10"
+        >
+          <!-- Traffic-light dots -->
+          <div class="flex items-center gap-1.5 shrink-0">
+            <div
+              class="size-3 rounded-full bg-[#ff5f57] shadow-[0_0_4px_#ff5f57aa]"
+            >
+            </div>
+            <div
+              class="size-3 rounded-full bg-[#febc2e] shadow-[0_0_4px_#febc2eaa]"
+            >
+            </div>
+            <div
+              class="size-3 rounded-full bg-[#28c840] shadow-[0_0_4px_#28c840aa]"
+            >
+            </div>
+          </div>
+          <!-- Centered path label -->
+          <div class="flex-1 flex justify-center">
+            <span
+              class="text-[11px] font-mono text-content-secondary/60 tracking-wide"
+            >
+              ~/pulsobi/automation-agent <span class="text-secondary/60">—</span
+              > bash
+            </span>
+          </div>
+          <!-- Spacer to balance the dots -->
+          <div class="w-[54px] shrink-0"></div>
+        </div>
+
+        <!-- Automation Flow -->
+        <div
+          class="relative flex items-center justify-between px-8 py-8"
+          style="min-height: 280px;"
+        >
+          <!-- SVG animated lines + particles overlay -->
+          <svg
+            class="absolute inset-0 w-full h-full pointer-events-none"
+            viewBox="0 0 660 280"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <!-- Glow filter for particles -->
+              <filter
+                id="glow-primary"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur stdDeviation="2.5" result="blur"
+                ></feGaussianBlur>
+                <feMerge
+                  ><feMergeNode in="blur"></feMergeNode><feMergeNode
+                    in="SourceGraphic"></feMergeNode></feMerge
+                >
+              </filter>
+              <filter
+                id="glow-secondary"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur stdDeviation="2.5" result="blur"
+                ></feGaussianBlur>
+                <feMerge
+                  ><feMergeNode in="blur"></feMergeNode><feMergeNode
+                    in="SourceGraphic"></feMergeNode></feMerge
+                >
+              </filter>
+              <!-- Left-to-center path definitions for animateMotion -->
+              <path id="p-l1" d="M180,66 C215,66 215,150 248,150"></path>
+              <path id="p-l2" d="M180,150 L248,150"></path>
+              <path id="p-l3" d="M180,234 C215,234 215,150 248,150"></path>
+              <!-- Center-to-right path definitions -->
+              <path id="p-r1" d="M412,150 C445,150 445,66 480,66"></path>
+              <path id="p-r2" d="M412,150 L480,150"></path>
+              <path id="p-r3" d="M412,150 C445,150 445,234 480,234"></path>
+            </defs>
+
+            <!-- Connection dots at left cards -->
+            <circle
+              cx="180"
+              cy="66"
+              r="3"
+              fill="var(--color-primary)"
+              opacity="0.5"></circle>
+            <circle
+              cx="180"
+              cy="150"
+              r="3"
+              fill="var(--color-primary)"
+              opacity="0.5"></circle>
+            <circle
+              cx="180"
+              cy="234"
+              r="3"
+              fill="var(--color-primary)"
+              opacity="0.5"></circle>
+            <!-- Connection dots at right cards -->
+            <circle
+              cx="480"
+              cy="66"
+              r="3"
+              fill="var(--color-secondary)"
+              opacity="0.5"></circle>
+            <circle
+              cx="480"
+              cy="150"
+              r="3"
+              fill="var(--color-secondary)"
+              opacity="0.5"></circle>
+            <circle
+              cx="480"
+              cy="234"
+              r="3"
+              fill="var(--color-secondary)"
+              opacity="0.5"></circle>
+
+            <!-- Base paths dim – Left → Center -->
+            <path
+              d="M180,66 C215,66 215,150 248,150"
+              stroke="var(--color-primary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+            <path
+              d="M180,150 L248,150"
+              stroke="var(--color-primary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+            <path
+              d="M180,234 C215,234 215,150 248,150"
+              stroke="var(--color-primary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+            <!-- Base paths dim – Center → Right -->
+            <path
+              d="M412,150 C445,150 445,66 480,66"
+              stroke="var(--color-secondary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+            <path
+              d="M412,150 L480,150"
+              stroke="var(--color-secondary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+            <path
+              d="M412,150 C445,150 445,234 480,234"
+              stroke="var(--color-secondary)"
+              stroke-width="1.5"
+              fill="none"
+              opacity="0.15"></path>
+
+            <!-- Animated beam strokes – Left → Center -->
+            <path
+              class="flow-beam"
+              style="animation-delay:0s"
+              d="M180,66 C215,66 215,150 248,150"
+              stroke="var(--color-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              class="flow-beam"
+              style="animation-delay:0.9s"
+              d="M180,150 L248,150"
+              stroke="var(--color-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              class="flow-beam"
+              style="animation-delay:1.8s"
+              d="M180,234 C215,234 215,150 248,150"
+              stroke="var(--color-primary)"
+              stroke-width="2"
+              fill="none"></path>
+            <!-- Animated beam strokes – Center → Right -->
+            <path
+              class="flow-beam"
+              style="animation-delay:0.45s"
+              d="M412,150 C445,150 445,66 480,66"
+              stroke="var(--color-secondary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              class="flow-beam"
+              style="animation-delay:1.35s"
+              d="M412,150 L480,150"
+              stroke="var(--color-secondary)"
+              stroke-width="2"
+              fill="none"></path>
+            <path
+              class="flow-beam"
+              style="animation-delay:2.25s"
+              d="M412,150 C445,150 445,234 480,234"
+              stroke="var(--color-secondary)"
+              stroke-width="2"
+              fill="none"></path>
+
+            <!-- Travelling particles – Left → Center (primary) -->
+            <circle
+              r="4"
+              fill="var(--color-primary)"
+              filter="url(#glow-primary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-l1"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="0s"
+                repeatCount="indefinite"></animate>
+            </circle>
+            <circle
+              r="4"
+              fill="var(--color-primary)"
+              filter="url(#glow-primary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="0.9s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-l2"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="0.9s"
+                repeatCount="indefinite"></animate>
+            </circle>
+            <circle
+              r="4"
+              fill="var(--color-primary)"
+              filter="url(#glow-primary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="1.8s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-l3"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="1.8s"
+                repeatCount="indefinite"></animate>
+            </circle>
+
+            <!-- Travelling particles – Center → Right (secondary) -->
+            <circle
+              r="4"
+              fill="var(--color-secondary)"
+              filter="url(#glow-secondary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="0.45s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-r1"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="0.45s"
+                repeatCount="indefinite"></animate>
+            </circle>
+            <circle
+              r="4"
+              fill="var(--color-secondary)"
+              filter="url(#glow-secondary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="1.35s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-r2"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="1.35s"
+                repeatCount="indefinite"></animate>
+            </circle>
+            <circle
+              r="4"
+              fill="var(--color-secondary)"
+              filter="url(#glow-secondary)"
+              opacity="0.9"
+            >
+              <animateMotion
+                dur="2s"
+                begin="2.25s"
+                repeatCount="indefinite"
+                rotate="auto"
+              >
+                <mpath href="#p-r3"></mpath>
+              </animateMotion>
+              <animate
+                attributeName="opacity"
+                values="0;1;1;0"
+                dur="2s"
+                begin="2.25s"
+                repeatCount="indefinite"></animate>
+            </circle>
+          </svg>
+
+          <!-- Left: Trigger / Input nodes -->
+          <div class="flex flex-col gap-4 z-10 shrink-0">
+            <!-- Email / Formulario -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-violet/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-violet"
+                >
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Email / Form
+                </p>
+                <p class="text-[10px] text-content-secondary">Nuevo envio</p>
+              </div>
+            </div>
+            <!-- Webhook / Evento -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-warning/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-warning"
+                >
+                  <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Webhook
+                </p>
+                <p class="text-[10px] text-content-secondary">
+                  Evento del sistema
+                </p>
+              </div>
+            </div>
+            <!-- Planificador -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-success/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-success"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Planificador
+                </p>
+                <p class="text-[10px] text-content-secondary">
+                  Tarea recurrente
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: AI Agent -->
+          <div class="relative z-10 shrink-0 flex flex-col items-center">
+            <!-- Outer pulsing ring -->
+            <div class="agent-outer-ring"></div>
+            <!-- Second slower ring -->
+            <div class="agent-outer-ring-2"></div>
+            <div
+              class="flex flex-col items-center gap-3 rounded-2xl bg-background/80 px-6 py-5 shadow-2xl ring-2 ring-primary/40 backdrop-blur-xl relative"
+            >
+              <!-- Glow orb -->
+              <div
+                class="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-primary/20 blur-2xl pointer-events-none"
+              >
+              </div>
+              <!-- Spinning orbit ring behind icon -->
+              <div class="relative flex size-14 items-center justify-center">
+                <div
+                  class="agent-orbit-ring absolute inset-0 rounded-full border border-dashed border-primary/30"
+                >
+                </div>
+                <div
+                  class="flex size-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet/20 to-accent/20 ring-1 ring-violet/30"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-violet"
+                  >
+                    <path d="M12 8V4H8"></path>
+                    <rect width="16" height="12" x="4" y="8" rx="2"></rect>
+                    <path d="M2 14h2"></path>
+                    <path d="M20 14h2"></path>
+                    <path d="M15 13v2"></path>
+                    <path d="M9 13v2"></path>
+                  </svg>
+                </div>
+              </div>
+              <!-- Label -->
+              <div class="text-center">
+                <p class="text-sm font-semibold text-content">Agente</p>
+                <p class="text-[10px] text-content-secondary mt-0.5">
+                  Automatizando flujos
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Action / Output nodes -->
+          <div class="flex flex-col gap-4 z-10 shrink-0">
+            <!-- Notificación Slack -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-accent/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-accent"
+                >
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Notificar
+                </p>
+                <p class="text-[10px] text-content-secondary">Slack / Email</p>
+              </div>
+            </div>
+            <!-- Crear Tarea -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-success/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-success"
+                >
+                  <path d="M11 12H3"></path>
+                  <path d="M16 6H3"></path>
+                  <path d="M16 18H3"></path>
+                  <path d="m19 10 2 2-4 4"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Crear Tarea
+                </p>
+                <p class="text-[10px] text-content-secondary">Jira / Trello</p>
+              </div>
+            </div>
+            <!-- Actualizar CRM -->
+            <div
+              class="flex items-center gap-2.5 rounded-xl bg-background/70 p-3 ring-1 ring-surface-border backdrop-blur-xl w-[148px]"
+            >
+              <div
+                class="flex size-8 items-center justify-center rounded-lg bg-violet/10 shrink-0"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-violet"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs font-medium text-content leading-tight">
+                  Actualizar CRM
+                </p>
+                <p class="text-[10px] text-content-secondary">
+                  Registro autom.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Text + Code to Web Animation -->
+    <div class="flex flex-col md:flex-row items-center gap-10 reveal-up" style="transition-delay: 200ms;">
+      <div class="md:w-[30%]">
+        <h3 class="text-2xl font-medium text-[var(--md-sys-color-on-surface-variant)]">
+          Páginas Web para tu negocio.
+        </h3>
+        <p class="text-base text-[var(--md-sys-color-on-surface)] mt-3 leading-relaxed">
+          Diseñamos y desarrollamos sitios web rápidos, modernos y optimizados.
+          Del código más limpio a una experiencia visual que cautiva a tus
+          clientes.
+        </p>
+        <div class="flex flex-wrap items-center gap-3 mt-5">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:astro" class="size-8" style="color: #FF5D01" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Astro</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:react" class="size-8" style="color: #61DAFB" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">React</span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-[var(--md-sys-color-surface-container-high)] border border-[var(--md-sys-color-outline-variant)] transition-all hover:scale-105 hover:-translate-y-1 hover:shadow-md hover:border-[var(--md-sys-color-primary)]">
+            <Icon name="simple-icons:tailwindcss" class="size-8" style="color: #06B6D4" />
+            <span class="text-xs text-[var(--md-sys-color-on-surface-variant)]">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden md:flex md:w-[70%] w-full rounded-2xl border border-primary/30 overflow-hidden bg-background-secondary flex-col sm:flex-row h-[320px]"
+      >
+        <!-- Code Editor Side (Left) -->
+        <div
+          class="w-full sm:w-1/2 h-full flex flex-col relative z-10 bg-background/50 backdrop-blur-sm"
+        >
+          <!-- Terminal chrome header -->
+          <div
+            class="flex items-center gap-3 px-4 py-2.5 bg-background/60 border-b border-primary/10"
+          >
+            <div class="flex items-center gap-1.5 shrink-0">
+              <div
+                class="size-3 rounded-full bg-[#ff5f57] shadow-[0_0_4px_#ff5f57aa]"
+              >
+              </div>
+              <div
+                class="size-3 rounded-full bg-[#febc2e] shadow-[0_0_4px_#febc2eaa]"
+              >
+              </div>
+              <div
+                class="size-3 rounded-full bg-[#28c840] shadow-[0_0_4px_#28c840aa]"
+              >
+              </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+              <span
+                class="text-[11px] font-mono text-content-secondary/60 tracking-wide"
+              >
+                LandingPage.tsx
+              </span>
+            </div>
+            <div class="w-[54px] shrink-0"></div>
+          </div>
+          <!-- Code Content -->
+          <div
+            class="p-5 overflow-hidden relative flex-1 flex items-center justify-center"
+          >
+            <div
+              class="flex flex-col gap-1.5 font-mono text-[11px] sm:text-[12px] md:text-[13px] text-content-secondary/80 w-full max-w-[280px]"
+            >
+              <div class="code-line-1">
+                <span class="text-[#ff7b72]">export default</span>
+                <span class="text-[#d2a8ff]">function</span>
+                <span class="text-[#79c0ff]">Page</span>() &#123;
+              </div>
+              <div class="code-line-2 pl-4">
+                <span class="text-[#ff7b72]">return</span> (
+              </div>
+              <div class="code-line-3 pl-8">
+                <span class="text-content">&lt;</span><span
+                  class="text-[#7ee787]">div</span
+                >
+                <span class="text-[#a5d6ff]">className</span><span
+                  class="text-content">=</span
+                ><span class="text-[#a5d6ff]">"hero"</span><span
+                  class="text-content">&gt;</span>
+              </div>
+              <div class="code-line-4 pl-12">
+                <span class="text-content">&lt;</span><span
+                  class="text-[#7ee787]">h1</span
+                ><span class="text-content">&gt;</span>Transforma tu negocio<span
+                  class="text-content">&lt;/</span
+                ><span class="text-[#7ee787]">h1</span><span
+                  class="text-content">&gt;</span>
+              </div>
+              <div class="code-line-5 pl-12">
+                <span class="text-content">&lt;</span><span
+                  class="text-[#7ee787]">Button</span
+                ><span class="text-content">&gt;</span>Empezar ahora<span
+                  class="text-content">&lt;/</span
+                ><span class="text-[#7ee787]">Button</span><span
+                  class="text-content">&gt;</span>
+              </div>
+              <div class="code-line-6 pl-8">
+                <span class="text-content">&lt;/</span><span
+                  class="text-[#7ee787]">div</span
+                ><span class="text-content">&gt;</span>
+              </div>
+              <div class="code-line-6 pl-4">)</div>
+              <div class="code-line-6">&#125;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Browser preview side (Right) -->
+        <div
+          class="w-full sm:w-1/2 h-full flex flex-col bg-[#f8f9fa] relative z-10 border-t sm:border-t-0 sm:border-l border-primary/30"
+        >
+          <!-- Browser Chrome -->
+          <div
+            class="flex items-center gap-3 px-4 py-2.5 bg-[#e9ecef] border-b border-black/5"
+          >
+            <div class="flex items-center gap-1.5">
+              <div class="size-3 rounded-full bg-black/20"></div>
+              <div class="size-3 rounded-full bg-black/20"></div>
+              <div class="size-3 rounded-full bg-black/20"></div>
+            </div>
+            <div
+              class="flex-1 bg-white rounded-md h-5 border border-black/5 mx-2"
+            >
+            </div>
+          </div>
+          <!-- Browser Content -->
+          <div
+            class="p-6 flex flex-col items-center justify-center flex-1 bg-white relative overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"
+            >
+            </div>
+            <div
+              class="browser-reveal relative z-10 flex flex-col items-center text-center"
+            >
+              <h1 class="text-xl font-bold text-gray-900 leading-tight">
+                Transforma tu negocio
+              </h1>
+              <p class="text-[11px] text-gray-500 mt-2 max-w-[200px]">
+                La mejor plataforma para escalar tus ventas y servicios de forma
+                eficiente.
+              </p>
+              <div
+                class="mt-5 px-5 py-2 bg-accent text-white rounded-lg text-xs font-medium"
+              >
+                Empezar ahora
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════════
+     FEATURES DARK MODE — forza tema oscuro dentro de la sección
+     ═══════════════════════════════════════════════════════════════ */
+  .features-dark {
+      --md-sys-color-primary:               #A3C8FF;
+      --md-sys-color-on-primary:            #00315C;
+      --md-sys-color-primary-container:     #004884;
+      --md-sys-color-on-primary-container:  #D4E4FF;
+      --md-sys-color-secondary:              #A4C8E8;
+      --md-sys-color-on-secondary:           #08354F;
+      --md-sys-color-secondary-container:    #214D67;
+      --md-sys-color-on-secondary-container: #CCE5FF;
+      --md-sys-color-tertiary:              #C5C0EA;
+      --md-sys-color-on-tertiary:           #302B60;
+      --md-sys-color-tertiary-container:    #474278;
+      --md-sys-color-on-tertiary-container: #E4DFFF;
+      --md-sys-color-surface:                  #111318;
+      --md-sys-color-on-surface:               #E1E2E8;
+      --md-sys-color-surface-variant:          #41484F;
+      --md-sys-color-on-surface-variant:       #C1C8D5;
+      --md-sys-color-surface-container-lowest: #0C0E13;
+      --md-sys-color-surface-container-low:    #191C20;
+      --md-sys-color-surface-container:        #1D2024;
+      --md-sys-color-surface-container-high:   #272B2F;
+      --md-sys-color-surface-container-highest:#32353A;
+      --md-sys-color-outline:         #8B939E;
+      --md-sys-color-outline-variant: #41484F;
+      --md-sys-color-inverse-surface:    #E1E2E8;
+      --md-sys-color-inverse-on-surface: #2E3036;
+      --md-sys-color-inverse-primary:    #1A4A7A;
+
+      background: var(--md-sys-color-surface-container-lowest);
+      color: var(--md-sys-color-on-surface);
+  }
+
+  /* ── Row 1: Card connector beams ── */
+  .beam-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: beam-animation 5s ease-in-out infinite;
+  }
+  .line-connector:nth-of-type(2) .beam-line {
+    animation-delay: 2.5s;
+  }
+  @keyframes beam-animation {
+    0% {
+      stroke-dashoffset: 200;
+    }
+    50% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -200;
+    }
+  }
+
+  /* ── Row 2: Flow beam strokes ── */
+  .flow-beam {
+    stroke-dasharray: 320;
+    stroke-dashoffset: 320;
+    animation: flow-beam-anim 3.2s ease-in-out infinite;
+  }
+  @keyframes flow-beam-anim {
+    0% {
+      stroke-dashoffset: 320;
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    92% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: -320;
+      opacity: 0;
+    }
+  }
+
+  /* ── Agent center: outer pulsing rings ── */
+  .agent-outer-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 1.25rem;
+    border: 1px solid var(--color-primary);
+    animation: agent-ring-pulse 2.4s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .agent-outer-ring-2 {
+    position: absolute;
+    inset: -14px;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-primary);
+    animation: agent-ring-pulse 2.4s ease-in-out infinite;
+    animation-delay: 0.6s;
+    pointer-events: none;
+    opacity: 0;
+  }
+  @keyframes agent-ring-pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.35;
+    }
+    100% {
+      transform: scale(1.12);
+      opacity: 0;
+    }
+  }
+
+  /* ── Agent orbit ring spin ── */
+  .agent-orbit-ring {
+    animation: orbit-spin 6s linear infinite;
+  }
+  @keyframes orbit-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* ── Agent status dot blink ── */
+  .agent-pulse-dot {
+    animation: dot-blink 1.6s ease-in-out infinite;
+  }
+  @keyframes dot-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+  }
+
+  /* ── Row 3: Code & Browser Animation ── */
+  .code-line-1 {
+    animation: type-l1 6s infinite;
+  }
+  .code-line-2 {
+    animation: type-l2 6s infinite;
+  }
+  .code-line-3 {
+    animation: type-l3 6s infinite;
+  }
+  .code-line-4 {
+    animation: type-l4 6s infinite;
+  }
+  .code-line-5 {
+    animation: type-l5 6s infinite;
+  }
+  .code-line-6 {
+    animation: type-l6 6s infinite;
+  }
+  .browser-reveal {
+    animation: browser-rev 6s infinite;
+  }
+
+  @keyframes type-l1 {
+    0% {
+      opacity: 0;
+    }
+    5%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes type-l2 {
+    0%,
+    10% {
+      opacity: 0;
+    }
+    15%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes type-l3 {
+    0%,
+    20% {
+      opacity: 0;
+    }
+    25%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes type-l4 {
+    0%,
+    30% {
+      opacity: 0;
+    }
+    35%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes type-l5 {
+    0%,
+    40% {
+      opacity: 0;
+    }
+    45%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes type-l6 {
+    0%,
+    50% {
+      opacity: 0;
+    }
+    55%,
+    95% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes browser-rev {
+    0%,
+    60% {
+      opacity: 0;
+      transform: scale(0.95) translateY(10px);
+    }
+    65%,
+    95% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

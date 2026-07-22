@@ -1,0 +1,160 @@
+---
+import { Image } from "astro:assets";
+import faqImage from "../assets/gradii-1920x1080.webp";
+---
+
+<section
+    class="features-dark flex flex-col items-center px-4 py-24 relative overflow-hidden"
+>
+    <div
+        class="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--md-sys-color-tertiary-container)]/10 rounded-full blur-[120px] pointer-events-none"
+    >
+    </div>
+    <h2
+        class="text-4xl md:text-5xl font-medium text-center max-w-[600px] font-clash reveal-up"
+    >
+        <span
+            class="font-nippo text-transparent bg-clip-text bg-gradient-to-r from-[var(--md-sys-color-primary)] to-[var(--md-sys-color-tertiary)]"
+            >Preguntas
+        </span>
+        <span class="text-[var(--md-sys-color-on-surface)]">y Respuestas</span>
+    </h2>
+    <p
+        class="text-base text-[var(--md-sys-color-on-surface-variant)] text-center max-w-[500px] mt-4 font-clash reveal-up"
+        style="transition-delay: 100ms;"
+    >
+        Encuentra respuestas a las preguntas más frecuentes sobre nuestros
+        servicios de análisis de datos, automatización con IA y desarrollo web.
+    </p>
+
+    <div
+        class="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start justify-center gap-8 px-4 md:px-0 py-10 reveal-up"
+        style="transition-delay: 200ms;"
+    >
+        <!-- FAQ Items -->
+        <div id="faqContainer"></div>
+    </div>
+</section>
+
+<script>
+    const faqs = [
+        {
+            question: "¿Qué es Pulsobi y qué servicios ofrece?",
+            answer: "Pulsobi es una agencia especializada en análisis de datos, automatización con inteligencia artificial y desarrollo web personalizado, para impulsar el crecimiento de tu negocio.",
+        },
+        {
+            question: "¿Para qué tipo de negocio son sus servicios?",
+            answer: "Trabajamos con negocios de cualquier tamaño que quieran tomar mejores decisiones con sus datos, automatizar tareas repetitivas o mejorar su presencia digital, sin importar si es la primera vez que implementan este tipo de soluciones.",
+        },
+        {
+            question: "¿Cómo es el proceso para trabajar con ustedes?",
+            answer: "Empezamos con una conversación para entender tus necesidades y objetivos. Luego te presentamos una propuesta clara con alcance y tiempos, y trabajamos contigo en cada etapa hasta la entrega final, con comunicación directa durante todo el proyecto.",
+        },
+        {
+            question: "¿Qué herramientas y tecnologías utilizan?",
+            answer: "Trabajamos con herramientas como Excel, Power BI, Looker Studio, Python y Pandas para análisis de datos y automatización, y con Astro, React y TailwindCSS para el desarrollo de páginas web modernas y rápidas.",
+        },
+        {
+            question: "¿Ofrecen soporte después de entregar el proyecto?",
+            answer: "Sí, brindamos acompañamiento después de la entrega para resolver dudas, hacer ajustes y asegurarnos de que la solución siga funcionando correctamente para tu negocio.",
+        },
+        {
+            question: "¿Cómo empiezo a trabajar con Pulsobi?",
+            answer: "Solo contáctanos y cuéntanos qué necesitas. Agendamos una conversación inicial sin compromiso para entender tu proyecto y ver cómo podemos ayudarte.",
+        },
+    ];
+
+    const container = document.getElementById("faqContainer");
+
+    faqs.forEach((faq, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.className =
+            "border-b border-[var(--md-sys-color-outline-variant)] py-4 cursor-pointer";
+
+        const header = document.createElement("div");
+        header.className =
+            "flex items-center justify-between transition-colors hover:text-[var(--md-sys-color-primary)] group";
+        header.innerHTML = `
+            <h3 class="text-base font-medium text-[var(--md-sys-color-on-surface)] group-hover:text-[var(--md-sys-color-primary)] transition-colors font-clash">${faq.question}</h3>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="transition-all duration-500 ease-in-out icon">
+                <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
+                    stroke="var(--md-sys-color-on-surface)" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+
+        const answer = document.createElement("p");
+        answer.className =
+            "text-sm text-[var(--md-sys-color-on-surface-variant)] transition-all duration-500 ease-in-out max-w-md opacity-0 max-h-0 -translate-y-2 pt-0 answer";
+        answer.textContent = faq.answer;
+
+        wrapper.appendChild(header);
+        wrapper.appendChild(answer);
+        container.appendChild(wrapper);
+
+        header.addEventListener("click", () => {
+            const allAnswers = document.querySelectorAll(".answer");
+            const allIcons = document.querySelectorAll(".icon");
+
+            allAnswers.forEach((el, i) => {
+                if (i === index) {
+                    const isOpen = el.classList.contains("opacity-100");
+                    el.classList.toggle("opacity-100", !isOpen);
+                    el.classList.toggle("max-h-[300px]", !isOpen);
+                    el.classList.toggle("translate-y-0", !isOpen);
+                    el.classList.toggle("pt-4", !isOpen);
+                    el.classList.toggle("opacity-0", isOpen);
+                    el.classList.toggle("max-h-0", isOpen);
+                    el.classList.toggle("-translate-y-2", isOpen);
+
+                    allIcons[i].classList.toggle("rotate-180", !isOpen);
+                } else {
+                    el.classList.remove(
+                        "opacity-100",
+                        "max-h-[300px]",
+                        "translate-y-0",
+                        "pt-4",
+                    );
+                    el.classList.add("opacity-0", "max-h-0", "-translate-y-2");
+                    allIcons[i].classList.remove("rotate-180");
+                }
+            });
+        });
+    });
+</script>
+
+<style>
+    .features-dark {
+        --md-sys-color-primary: #a3c8ff;
+        --md-sys-color-on-primary: #00315c;
+        --md-sys-color-primary-container: #004884;
+        --md-sys-color-on-primary-container: #d4e4ff;
+        --md-sys-color-secondary: #a4c8e8;
+        --md-sys-color-on-secondary: #08354f;
+        --md-sys-color-secondary-container: #214d67;
+        --md-sys-color-on-secondary-container: #cce5ff;
+        --md-sys-color-tertiary: #c5c0ea;
+        --md-sys-color-on-tertiary: #302b60;
+        --md-sys-color-tertiary-container: #474278;
+        --md-sys-color-on-tertiary-container: #e4dfff;
+        --md-sys-color-surface: #111318;
+        --md-sys-color-on-surface: #e1e2e8;
+        --md-sys-color-surface-variant: #41484f;
+        --md-sys-color-on-surface-variant: #c1c8d5;
+        --md-sys-color-surface-container-lowest: #0c0e13;
+        --md-sys-color-surface-container-low: #191c20;
+        --md-sys-color-surface-container: #1d2024;
+        --md-sys-color-surface-container-high: #272b2f;
+        --md-sys-color-surface-container-highest: #32353a;
+        --md-sys-color-outline: #8b939e;
+        --md-sys-color-outline-variant: #41484f;
+        --md-sys-color-inverse-surface: #e1e2e8;
+        --md-sys-color-inverse-on-surface: #2e3036;
+        --md-sys-color-inverse-primary: #1a4a7a;
+
+        background: var(--md-sys-color-surface-container-lowest);
+        color: var(--md-sys-color-on-surface);
+    }
+</style>
