@@ -15,30 +15,6 @@ import '../app.css';
 		/>
 
 		<title>PulsoBI — Data Intelligence & Automatización</title>
-
-		<script is:inline>
-			(function () {
-				var theme = localStorage.getItem("theme");
-				if (theme === "dark") {
-					document.documentElement.setAttribute("data-theme", "dark");
-				} else if (theme === "light") {
-					document.documentElement.setAttribute(
-						"data-theme",
-						"light",
-					);
-				} else {
-					if (
-						window.matchMedia("(prefers-color-scheme: dark)")
-							.matches
-					) {
-						document.documentElement.setAttribute(
-							"data-theme",
-							"dark",
-						);
-					}
-				}
-			})();
-		</script>
 	</head>
 	<body class="font-clash">
 		<slot />
