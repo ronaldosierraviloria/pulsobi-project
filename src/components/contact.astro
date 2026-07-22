@@ -22,7 +22,7 @@
         class="font-nippo text-[var(--md-sys-color-on-surface)] font-normal leading-tight mb-5"
         style="font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em;"
       >
-        Hablemos de<br />tu proyecto
+        <span class="text-[var(--md-sys-color-primary)]">Hablemos</span> de <br />tu proyecto
       </h2>
       <p
         class="text-[var(--md-sys-color-on-surface-variant)] max-w-md mx-auto leading-relaxed mb-8 font-clash"
@@ -176,7 +176,7 @@
           <label
             for="name"
             class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
-            >Nombre</label
+            >Nombre Completo</label
           >
           <input
             type="text"
@@ -191,7 +191,7 @@
           <label
             for="email"
             class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
-            >Email</label
+            >Correo Electronico</label
           >
           <input
             type="email"
@@ -200,6 +200,24 @@
             class="w-full px-4 py-3 text-sm text-[var(--md-sys-color-on-surface)] bg-[var(--md-sys-color-surface)] border border-[var(--md-sys-color-outline-variant)] rounded-[var(--md-sys-shape-corner-small)] focus:outline-none focus:border-[var(--md-sys-color-primary)] focus:ring-4 focus:ring-[var(--md-sys-color-primary)]/20 transition-all duration-300 font-clash shadow-sm"
             required
           />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label
+            for="service"
+            class="text-sm text-[var(--md-sys-color-on-surface-variant)] font-clash"
+            >Servicio</label
+          >
+          <select
+            id="service"
+            name="service"
+            class="w-full px-4 py-3 text-sm text-[var(--md-sys-color-on-surface)] bg-[var(--md-sys-color-surface)] border border-[var(--md-sys-color-outline-variant)] rounded-[var(--md-sys-shape-corner-small)] focus:outline-none focus:border-[var(--md-sys-color-primary)] focus:ring-4 focus:ring-[var(--md-sys-color-primary)]/20 transition-all duration-300 font-clash shadow-sm appearance-none cursor-pointer"
+          >
+            <option value="">Selecciona un servicio</option>
+            <option value="Análisis de Datos">Análisis de Datos</option>
+            <option value="IA & Automatización">IA & Automatización</option>
+            <option value="Páginas Web">Páginas Web</option>
+          </select>
         </div>
 
         <div class="flex flex-col gap-2">
@@ -226,8 +244,7 @@
           class="hidden text-sm font-medium text-center mt-2 text-[var(--md-sys-color-primary)] font-clash"
         >
         </p>
-                <div class="h-captcha" data-captcha="true"></div>
-
+        <div class="h-captcha" data-captcha="true"></div>
       </form>
     </div>
   </div>
@@ -236,6 +253,28 @@
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement;
   const result = document.getElementById("form-result");
+
+  const serviceSelect = document.getElementById("service") as HTMLSelectElement;
+  const messageField = document.getElementById("message") as HTMLTextAreaElement;
+
+  const serviceMessages: Record<string, string> = {
+    "Análisis de Datos":
+      "Estoy interesado en el servicio de Análisis de Datos. Me gustaría conocer más sobre cómo pueden ayudar a mi negocio.",
+    "IA & Automatización":
+      "Estoy interesado en el servicio de IA & Automatización. Quiero optimizar mis procesos empresariales.",
+    "Páginas Web":
+      "Estoy interesado en el servicio de Páginas Web. Necesito una página de alto impacto para mi negocio.",
+  };
+
+  if (serviceSelect && messageField) {
+    serviceSelect.addEventListener("change", function () {
+      const selected = serviceSelect.value;
+      if (selected && serviceMessages[selected]) {
+        messageField.value = serviceMessages[selected];
+        messageField.focus();
+      }
+    });
+  }
 
   if (form && result) {
     form.addEventListener("submit", function (e) {
