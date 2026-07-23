@@ -1,5 +1,19 @@
 ---
 import '../app.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	canonical?: string;
+	image?: string;
+}
+
+const {
+	title = "PulsoBI Tech — Data Intelligence, Automatización & Desarrollo Web",
+	description = "En PulsoBI Tech transformamos datos en decisiones estratégicas. Desarrollamos páginas web de alto impacto, automatizamos procesos de negocio y diseñamos dashboards interactivos.",
+	canonical = "https://pulsobi.netlify.app/",
+	image = "https://pulsobi.netlify.app/logo.webp"
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es" data-theme="light">
@@ -7,14 +21,43 @@ import '../app.css';
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/webp" href="/logo.webp" />
+		<link rel="canonical" href={canonical} />
 		<script src="https://web3forms.com/client/script.js" async defer></script>
 		<meta name="generator" content={Astro.generator} />
-		<meta
-			name="description"
-			content="PulsoBI — Soluciones inteligentes de datos, automatización y dashboards para impulsar decisiones estratégicas en tu empresa."
-		/>
 
-		<title>PulsoBI — Data Intelligence & Automatización</title>
+		<!-- SEO Principal -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="PulsoBI, PulsoBI Tech, Business Intelligence, Inteligencia de Negocios, Dashboards, Power BI, Desarrollo Web, Automatización de procesos, Analytics, Análisis de datos, Sitios web profesionales" />
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="PulsoBI Tech" />
+
+		<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:site_name" content="PulsoBI Tech" />
+		<meta property="og:locale" content="es_ES" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonical} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+
+		<!-- Schema.org JSON-LD (Estructura de Datos para Google) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "PulsoBI Tech",
+			"url": "https://pulsobi.netlify.app/",
+			"logo": "https://pulsobi.netlify.app/logo.webp",
+			"description": description,
+			"sameAs": []
+		})} />
 	</head>
 	<body class="font-clash">
 		<slot />
