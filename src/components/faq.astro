@@ -28,11 +28,10 @@ import faqImage from "../assets/gradii-1920x1080.webp";
     </p>
 
     <div
-        class="max-w-4xl w-full mx-auto flex flex-col md:flex-row items-start justify-center gap-8 px-4 md:px-0 py-10 reveal-up"
+        class="max-w-4xl w-full mx-auto px-4 md:px-0 py-10 reveal-up"
         style="transition-delay: 200ms;"
     >
-        <!-- FAQ Items -->
-        <div id="faqContainer"></div>
+        <div id="faqContainer" class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2"></div>
     </div>
 </section>
 
@@ -87,7 +86,7 @@ import faqImage from "../assets/gradii-1920x1080.webp";
 
         const answer = document.createElement("p");
         answer.className =
-            "text-sm text-[var(--md-sys-color-on-surface-variant)] transition-all duration-500 ease-in-out max-w-md opacity-0 max-h-0 -translate-y-2 pt-0 answer";
+            "text-sm text-[var(--md-sys-color-on-surface-variant)] transition-all duration-500 ease-in-out opacity-0 max-h-0 -translate-y-2 pt-0 answer";
         answer.textContent = faq.answer;
 
         wrapper.appendChild(header);

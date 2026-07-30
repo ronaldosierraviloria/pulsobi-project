@@ -1,0 +1,264 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logos/logo.webp";
+import { Icon } from "astro-icon/components";
+---
+
+<nav
+    id="main-nav"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+>
+    <div
+        id="nav-inner"
+        class="w-full flex items-center justify-between gap-4 px-5 py-3 transition-all duration-500 bg-[var(--md-sys-color-surface-container-low)] md:bg-[#f4f3eff6] md:backdrop-blur-lg md:border-b md:border-white/30"
+    >
+        <div class="flex items-center gap-4">
+            <a
+                href="#"
+                class="focus-visible:outline-none flex items-center gap-2.5 group transition-transform hover:scale-105 shrink-0"
+            >
+                <Image src={Logo} alt="PulsoBI Tech" class="h-9 w-auto" />
+                <span
+                    class="text-content font-bold text-lg tracking-tight font-nippo"
+                >
+                    PulsoBI <span class="text-sky-600">Tech</span>
+                </span>
+            </a>
+
+            <span class="hidden md:block text-gray-300 select-none">|</span>
+
+            <div class="hidden md:flex items-center gap-1">
+                <a
+                    href="#"
+                    class="nav-link relative text-gray-500 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-gray-900 hover:bg-black/5"
+                    >Inicio</a
+                >
+                <a
+                    href="#servicios"
+                    class="nav-link relative text-gray-500 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-gray-900 hover:bg-black/5"
+                    >Servicios</a
+                >
+                <a
+                    href="#nosotros"
+                    class="nav-link relative text-gray-500 font-medium text-sm px-4 py-2 rounded-xl transition-all duration-300 hover:text-gray-900 hover:bg-black/5"
+                    >Nosotros</a
+                >
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <a
+                href="#contacto"
+                class="hidden md:inline-flex items-center gap-2 h-9 px-5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#1A4A7A] to-[#5b5791] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(26,74,122,0.5)] active:scale-95 shrink-0"
+            >
+                Contacto
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"
+                    ></path></svg
+                >
+            </a>
+
+            <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hidden md:inline-flex items-center justify-center size-9 rounded-xl text-gray-500 bg-black/5 transition-all duration-300 hover:text-[#0A66C2] hover:bg-[#0A66C2]/10 hover:scale-105 active:scale-95 shrink-0"
+                aria-label="LinkedIn"
+            >
+                <Icon name="simple-icons:linkedin" class="size-4.5" />
+            </a>
+
+            <button
+                id="open-menu"
+                class="md:hidden p-2 rounded-xl text-gray-700 transition-all hover:scale-110 active:scale-95"
+                aria-label="Abrir menú"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M4 12h16"></path><path d="M4 18h16"></path><path
+                        d="M4 6h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div
+        id="menu"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 bg-[#0C0E13]/95 backdrop-blur-2xl transition-[opacity,visibility] duration-300 opacity-0 invisible"
+    >
+        <div
+            class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#1A4A7A]/20 rounded-full blur-[100px] pointer-events-none"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#5b5791]/15 rounded-full blur-[80px] pointer-events-none"
+        >
+        </div>
+
+        <div class="absolute top-5 left-5 flex items-center gap-2.5">
+            <Image src={Logo} alt="PulsoBI Tech" class="h-9 w-auto" />
+            <span
+                class="text-white font-bold text-lg tracking-tight font-clash"
+            >
+                PulsoBI <span class="text-[#64B5F6]">Tech</span>
+            </span>
+        </div>
+
+        <button
+            id="close-menu"
+            class="absolute top-4 right-4 p-2.5 rounded-xl text-white/70 bg-white/10 hover:bg-white/20 hover:text-white border border-white/10 transition-all hover:scale-110 active:scale-95"
+            aria-label="Cerrar menú"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+
+        <nav class="flex flex-col items-center gap-2 w-full max-w-xs">
+            <a
+                href="#"
+                class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                >Inicio</a
+            >
+            <a
+                href="#servicios"
+                class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                >Servicios</a
+            >
+            <a
+                href="#nosotros"
+                class="mobile-nav-link w-full text-center text-2xl font-semibold text-white/80 hover:text-white py-3 px-6 rounded-2xl transition-all hover:bg-white/10 active:scale-95"
+                >Nosotros</a
+            >
+        </nav>
+
+        <a
+            href="#contacto"
+            class="mobile-nav-link inline-flex items-center gap-2 h-12 px-8 rounded-lg font-bold text-base text-white bg-[#1A4A7A] hover:brightness-110 hover:scale-105 transition-all shadow-[0_0_20px_rgba(26,74,122,0.4)]"
+        >
+            Contacto
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+            >
+        </a>
+    </div>
+</nav>
+
+<style is:inline>
+    #main-nav {
+    }
+
+    .nav-link.active {
+        color: var(--md-sys-color-primary) !important;
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 2px;
+    }
+
+    #menu.open {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+</style>
+
+<script>
+    const openMenuBtn = document.getElementById("open-menu");
+    const closeMenuBtn = document.getElementById("close-menu");
+    const menu = document.getElementById("menu");
+
+    function openMenu() {
+        menu.classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+        menu.classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    openMenuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+
+    document.querySelectorAll(".mobile-nav-link").forEach((item) => {
+        item.addEventListener("click", closeMenu);
+    });
+
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = [
+        { id: "", el: null },
+        { id: "servicios", el: document.getElementById("servicios") },
+        { id: "nosotros", el: document.getElementById("nosotros") },
+    ];
+
+    function updateActiveLink() {
+        let activeId = "";
+
+        if (window.scrollY >= 150) {
+            for (const section of sections) {
+                if (section.el) {
+                    const rect = section.el.getBoundingClientRect();
+                    if (rect.top <= 120) {
+                        activeId = section.id;
+                    }
+                }
+            }
+        }
+
+        navLinks.forEach((link) => {
+            const href = link.getAttribute("href").replace("#", "");
+            link.classList.toggle("active", href === activeId);
+        });
+    }
+
+    updateActiveLink();
+
+    let ticking = false;
+
+    window.addEventListener("scroll", () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveLink();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+</script>
