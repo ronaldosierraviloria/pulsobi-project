@@ -28,7 +28,7 @@
         class="max-w-4xl w-full mx-auto px-4 md:px-0 py-10 reveal-up"
         style="transition-delay: 200ms;"
     >
-        <div id="faqContainer" class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2"></div>
+        <div id="faqContainer" class="grid grid-cols-1 gap-y-4 items-start"></div>
     </div>
 </section>
 
@@ -61,64 +61,61 @@
     ];
 
     const container = document.getElementById("faqContainer");
+    const items = [];
 
     faqs.forEach((faq, index) => {
         const wrapper = document.createElement("div");
         wrapper.className =
-            "border-b border-[var(--md-sys-color-outline-variant)] py-4 cursor-pointer";
+            "faq-item rounded-2xl border border-[var(--md-sys-color-outline-variant)] bg-[var(--md-sys-color-surface-container-low)]/40 overflow-hidden transition-colors duration-300";
 
-        const header = document.createElement("div");
-        header.className =
-            "flex items-center justify-between transition-colors hover:text-[var(--md-sys-color-primary)] group";
-        header.innerHTML = `
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className =
+            "faq-btn group w-full flex items-center justify-between gap-4 p-5 text-left cursor-pointer transition-colors";
+        button.setAttribute("aria-expanded", "false");
+        button.innerHTML = `
             <h3 class="text-base font-medium text-[var(--md-sys-color-on-surface)] group-hover:text-[var(--md-sys-color-primary)] transition-colors font-clash">${faq.question}</h3>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="transition-all duration-500 ease-in-out icon">
+                class="faq-icon shrink-0 transition-transform duration-500 ease-in-out text-[var(--md-sys-color-on-surface-variant)]">
                 <path d="m4.5 7.2 3.793 3.793a1 1 0 0 0 1.414 0L13.5 7.2"
-                    stroke="var(--md-sys-color-on-surface)" stroke-width="1.5"
+                    stroke="currentColor" stroke-width="1.5"
                     stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         `;
 
+        const answerWrap = document.createElement("div");
+        answerWrap.className =
+            "faq-answer overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0";
+        const divider = document.createElement("div");
+        divider.className = "mx-5 h-px bg-[var(--md-sys-color-outline-variant)]";
         const answer = document.createElement("p");
         answer.className =
-            "text-sm text-[var(--md-sys-color-on-surface-variant)] transition-all duration-500 ease-in-out opacity-0 max-h-0 -translate-y-2 pt-0 answer";
+            "px-5 pb-5 pt-4 text-sm text-[var(--md-sys-color-on-surface-variant)] leading-relaxed font-clash";
         answer.textContent = faq.answer;
 
-        wrapper.appendChild(header);
-        wrapper.appendChild(answer);
+        answerWrap.appendChild(divider);
+        answerWrap.appendChild(answer);
+        wrapper.appendChild(button);
+        wrapper.appendChild(answerWrap);
         container.appendChild(wrapper);
 
-        header.addEventListener("click", () => {
-            const allAnswers = document.querySelectorAll(".answer");
-            const allIcons = document.querySelectorAll(".icon");
+        items.push({ wrapper, button, answerWrap, icon: button.querySelector(".faq-icon") });
 
-            allAnswers.forEach((el, i) => {
-                if (i === index) {
-                    const isOpen = el.classList.contains("opacity-100");
-                    el.classList.toggle("opacity-100", !isOpen);
-                    el.classList.toggle("max-h-[300px]", !isOpen);
-                    el.classList.toggle("translate-y-0", !isOpen);
-                    el.classList.toggle("pt-4", !isOpen);
-                    el.classList.toggle("opacity-0", isOpen);
-                    el.classList.toggle("max-h-0", isOpen);
-                    el.classList.toggle("-translate-y-2", isOpen);
-
-                    allIcons[i].classList.toggle("rotate-180", !isOpen);
-                } else {
-                    el.classList.remove(
-                        "opacity-100",
-                        "max-h-[300px]",
-                        "translate-y-0",
-                        "pt-4",
-                    );
-                    el.classList.add("opacity-0", "max-h-0", "-translate-y-2");
-                    allIcons[i].classList.remove("rotate-180");
-                }
-            });
-        });
+        button.addEventListener("click", () => toggle(index));
     });
+
+    function toggle(activeIndex) {
+        items.forEach((item, i) => {
+            const isOpen = i === activeIndex && !item.answerWrap.classList.contains("opacity-100");
+            item.answerWrap.classList.toggle("opacity-100", isOpen);
+            item.answerWrap.classList.toggle("max-h-[300px]", isOpen);
+            item.answerWrap.classList.toggle("max-h-0", !isOpen);
+            item.icon.classList.toggle("rotate-180", isOpen);
+            item.wrapper.classList.toggle("border-[var(--md-sys-color-primary)]", isOpen);
+            item.button.setAttribute("aria-expanded", String(isOpen));
+        });
+    }
 </script>
 
 <style>
