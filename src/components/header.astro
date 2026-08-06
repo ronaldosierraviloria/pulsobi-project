@@ -181,7 +181,10 @@ import Navbar from "./navbar.astro";
                     src={ScreenWebp}
                     alt="Vista Antes"
                     class="w-full object-cover block"
-                    quality={100}
+                    quality={85}
+                    widths={[480, 720, 1024, 1600]}
+                    sizes="(min-width: 1024px) 46vw, (min-width: 640px) 75vw, 90vw"
+                    priority
                     id="compare-after"
                 />
 
@@ -195,7 +198,10 @@ import Navbar from "./navbar.astro";
                         src={DashboardDark}
                         alt="Vista Después"
                         class="w-full h-full object-cover block"
-                        quality={100}
+                        quality={85}
+                        widths={[480, 720, 1024, 1600]}
+                        sizes="(min-width: 1024px) 46vw, (min-width: 640px) 75vw, 90vw"
+                        loading="eager"
                     />
                 </div>
 

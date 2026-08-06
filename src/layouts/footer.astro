@@ -11,7 +11,14 @@ import Logo from "../assets/logos/logo.webp";
   >
     <!-- Logo -->
     <a href="#">
-      <Image src={Logo} alt="PulsoBI" class="h-10 w-auto" />
+      <Image
+        src={Logo}
+        alt="PulsoBI"
+        class="h-10 w-auto"
+        loading="lazy"
+        widths={[48, 96, 160]}
+        sizes="48px"
+      />
     </a>
 
     <!-- Single Page Links -->
@@ -74,7 +81,7 @@ import Logo from "../assets/logos/logo.webp";
         </svg>
       </a>
       <a
-        href="mailto:contacto@pulsobi.com"
+        href="mailto:contactopulsobi@gmail.com"
         class="text-[var(--md-sys-color-outline)] hover:text-[var(--md-sys-color-primary)] transition-colors"
         aria-label="Email"
       >
@@ -114,12 +121,12 @@ import Logo from "../assets/logos/logo.webp";
     </p>
     <div class="flex gap-4">
       <a
-        href="#"
+        href="/terminos"
         class="hover:text-[var(--md-sys-color-on-surface)] transition-colors"
         >Términos y Condiciones</a
       >
       <a
-        href="#"
+        href="/privacidad"
         class="hover:text-[var(--md-sys-color-on-surface)] transition-colors"
         >Privacidad</a
       >
